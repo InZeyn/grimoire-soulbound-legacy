@@ -13,9 +13,9 @@
 2. [Milestone Map](#2-milestone-map)
 3. [MVP Definition](#3-mvp-definition)
 4. [Phase 1 — Data Architecture (COMPLETE)](#4-phase-1--data-architecture-complete)
-5. [Phase 2 — Battle System](#5-phase-2--battle-system)
-6. [Phase 3 — PvE Campaign](#6-phase-3--pve-campaign)
-7. [Phase 4 — Content & Progression](#7-phase-4--content--progression)
+5. [Phase 2 — Battle System (COMPLETE)](#5-phase-2--battle-system)
+6. [Phase 3 — PvE Campaign (COMPLETE)](#6-phase-3--pve-campaign)
+7. [Phase 4 — Content & Progression (COMPLETE)](#7-phase-4--content--progression)
 8. [Phase 5 — Visual & Audio Polish](#8-phase-5--visual--audio-polish)
 9. [Phase 6 — PvP & Live Service](#9-phase-6--pvp--live-service)
 10. [Risk Register](#10-risk-register)
@@ -34,7 +34,7 @@
 | **Target Platforms** | Windows, Linux, macOS (desktop-first) |
 | **Revenue Model** | Early Access $9.99 → Premium $14.99–$19.99 |
 | **MVP Target** | Single-player playable vertical slice |
-| **Current Status** | Phase 1 complete, Phase 2 next |
+| **Current Status** | Phases 1–4 complete, Phase 5 next |
 
 ### Team Roles
 
@@ -61,7 +61,7 @@
  │  Data    │  │  Battle  │  │   PvE    │  │ Content  │  │  Polish  │  │  PvP &   │
  │  Arch    │  │  System  │  │ Campaign │  │ & Prog   │  │  V & A   │  │  Live    │
  │          │  │          │  │          │  │          │  │          │  │          │
- │ ✅ DONE  │  │ ✅ DONE  │  │ ✅ DONE  │  │ 🔲 NEXT  │  │ 🔲 TODO  │  │ 🔲 TODO  │
+ │ ✅ DONE  │  │ ✅ DONE  │  │ ✅ DONE  │  │ ✅ DONE  │  │ 🔲 TODO  │  │ 🔲 TODO  │
  │ v0.1.0   │  │ v0.2.0   │  │ v0.3.0   │  │ v0.4.0   │  │ v0.5.0   │  │ v0.6.0   │
  └──────────┘  └──────────┘  └──────────┘  └──────────┘  └──────────┘  └──────────┘
                               ↑                           ↑
@@ -226,7 +226,7 @@ Create 5+ enemy `.tres` files with varied intents:
 [x] 2.13  Implement Alignment Attunement (declare alignment → matching cards cost -1 mana this turn)
 [x] 2.14  Implement end-of-battle rewards (card XP via MasteryTracker, grimoire XP)
 [x] 2.15  Create 5 enemy .tres files (Ink Wisp, Page Worm, Dust Golem, Rune Sprite, Chapter Guardian)
-[ ] 2.16  Update existing card .tres files with EffectResource references
+[x] 2.16  Update existing card .tres files with EffectResource references
 [x] 2.17  Deduplicate alignment shift logic between EvolutionManager and AlignmentManager
 [x] 2.18  Implement atomic saves in GameManager (write .tmp → rename)
 [x] 2.19  Move test_phase1.gd to tests/ folder
@@ -324,9 +324,9 @@ Build the PvE chapter structure. Player navigates a node map, fights encounters,
 
 ---
 
-## 7. Phase 4 — Content & Progression
+## 7. Phase 4 — Content & Progression (COMPLETE)
 
-> **Version:** `0.4.0` | **Status:** TODO | **Depends on:** Phase 3
+> **Version:** `0.4.0` | **Status:** COMPLETE | **Depends on:** Phase 3
 
 ### Goal
 Fill out the full card library, implement all progression systems, and validate seed balance. This phase transforms the prototype into a content-complete game.
@@ -356,36 +356,36 @@ Fill out the full card library, implement all progression systems, and validate 
 - Ultimate Spell generation at level 20
 
 ### Phase 4 Exit Criteria
-- [ ] 30 base cards with stats, effects, and `.tres` files
-- [ ] 10+ cards have 3-path evolution trees (30+ evolved variants)
-- [ ] Seed validator rejects seeds that produce < 2 cards per type
-- [ ] Grimoire levels 1–20 with correct deck size / inscription scaling
-- [ ] Inscription system: equip/unequip from available slots
-- [ ] Balance pass: no single card dominates across all seeds
-- [ ] Full card library loads in Godot editor without errors
+- [x] 30 base cards with stats, effects, and `.tres` files
+- [x] 10+ cards have 3-path evolution trees (30+ evolved variants)
+- [x] Seed validator rejects seeds that produce < 2 cards per type
+- [x] Grimoire levels 1–20 with correct deck size / inscription scaling
+- [x] Inscription system: equip/unequip from available slots
+- [x] Balance pass: no single card dominates across all seeds
+- [x] Full card library loads in Godot editor without errors
 
 ### Phase 4 TODO
 
 ```
-[ ] 4.01  Design 30 base cards in spreadsheet (name, type, alignment, rarity, mana, value, effect, description)
-[ ] 4.02  Create 30 base card .tres files
-[ ] 4.03  Design 10 evolution trees (3 paths each = 30 evolved cards)
-[ ] 4.04  Create 30 evolved card .tres files with EffectResource references
-[ ] 4.05  Link evolution paths in base card .tres files (evolution_radiant/vile/primal)
-[ ] 4.06  Create seed_validator.gd — simulate 1,000 hands, guarantee 2+ cards per type
-[ ] 4.07  Update grimoire_generator.gd — select 20 cards from full library using seed
-[ ] 4.08  Create inscription_manager.gd — slot management, equip/unequip, passive buff application
-[ ] 4.09  Create 6+ inscription .tres files (2 per alignment)
-[ ] 4.10  Implement Grimoire XP curve (levels 1–20)
-[ ] 4.11  Implement deck size scaling per level
-[ ] 4.12  Implement inscription slot unlocks per level
-[ ] 4.13  Implement Ultimate Spell generation at level 20 (seed + alignment → unique card)
-[ ] 4.14  Balance pass — DPS/mana, heal/mana, effect/cost ratios across all 60+ cards
-[ ] 4.15  Write test_seed_validator.gd
-[ ] 4.16  Write test_inscriptions.gd
-[ ] 4.17  Write test_progression.gd (leveling curve, deck size, slot unlocks)
-[ ] 4.18  Run full regression (Phases 1–4)
-[ ] 4.19  Milestone review: MVP Content Complete gate criteria
+[x] 4.01  Design 30 base cards in spreadsheet (name, type, alignment, rarity, mana, value, effect, description)
+[x] 4.02  Create 30 base card .tres files
+[x] 4.03  Design 10 evolution trees (3 paths each = 30 evolved cards)
+[x] 4.04  Create 30 evolved card .tres files with EffectResource references
+[x] 4.05  Link evolution paths in base card .tres files (evolution_radiant/vile/primal)
+[x] 4.06  Create seed_validator.gd — simulate 1,000 hands, guarantee 2+ cards per type
+[x] 4.07  Update grimoire_generator.gd — select 20 cards from full library using seed
+[x] 4.08  Create inscription_manager.gd — slot management, equip/unequip, passive buff application
+[x] 4.09  Create 6+ inscription .tres files (2 per alignment)
+[x] 4.10  Implement Grimoire XP curve (levels 1–20)
+[x] 4.11  Implement deck size scaling per level
+[x] 4.12  Implement inscription slot unlocks per level
+[x] 4.13  Implement Ultimate Spell generation at level 20 (seed + alignment → unique card)
+[x] 4.14  Balance pass — DPS/mana, heal/mana, effect/cost ratios across all 60+ cards
+[x] 4.15  Write test_seed_validator.gd
+[x] 4.16  Write test_inscriptions.gd
+[x] 4.17  Write test_progression.gd (leveling curve, deck size, slot unlocks)
+[x] 4.18  Run full regression (Phases 1–4) — 235+ passed, 0 failed
+[x] 4.19  Milestone review: MVP Content Complete gate criteria
 ```
 
 ---
@@ -658,7 +658,7 @@ Add multiplayer PvP (1v1), matchmaking, leaderboards, seasonal content rotation,
 [x] 2.13  Implement Alignment Attunement
 [x] 2.14  Implement end-of-battle rewards
 [x] 2.15  Create 5 enemy .tres files
-[ ] 2.16  Update card .tres files with EffectResource references
+[x] 2.16  Update card .tres files with EffectResource references
 [x] 2.17  Deduplicate alignment shift logic
 [x] 2.18  Implement atomic saves
 [x] 2.19  Move test_phase1.gd to tests/
@@ -696,28 +696,28 @@ Add multiplayer PvP (1v1), matchmaking, leaderboards, seasonal content rotation,
 [x] 3.22  Milestone review: Internal Alpha
 ```
 
-### Phase 4 — Content & Progression
+### Phase 4 — Content & Progression ✅
 
 ```
-[ ] 4.01  Design 30 base cards in spreadsheet
-[ ] 4.02  Create 30 base card .tres files
-[ ] 4.03  Design 10 evolution trees (30 evolved cards)
-[ ] 4.04  Create 30 evolved card .tres files
-[ ] 4.05  Link evolution paths in base card .tres
-[ ] 4.06  Create seed_validator.gd
-[ ] 4.07  Update grimoire_generator.gd for full library
-[ ] 4.08  Create inscription_manager.gd
-[ ] 4.09  Create 6+ inscription .tres files
-[ ] 4.10  Implement Grimoire XP curve (1–20)
-[ ] 4.11  Implement deck size scaling
-[ ] 4.12  Implement inscription slot unlocks
-[ ] 4.13  Implement Ultimate Spell generation
-[ ] 4.14  Balance pass across all cards
-[ ] 4.15  Write test_seed_validator.gd
-[ ] 4.16  Write test_inscriptions.gd
-[ ] 4.17  Write test_progression.gd
-[ ] 4.18  Run full regression
-[ ] 4.19  Milestone review: Content Complete / MVP
+[x] 4.01  Design 30 base cards in spreadsheet
+[x] 4.02  Create 30 base card .tres files
+[x] 4.03  Design 10 evolution trees (30 evolved cards)
+[x] 4.04  Create 30 evolved card .tres files
+[x] 4.05  Link evolution paths in base card .tres
+[x] 4.06  Create seed_validator.gd
+[x] 4.07  Update grimoire_generator.gd for full library
+[x] 4.08  Create inscription_manager.gd
+[x] 4.09  Create 6+ inscription .tres files
+[x] 4.10  Implement Grimoire XP curve (1–20)
+[x] 4.11  Implement deck size scaling
+[x] 4.12  Implement inscription slot unlocks
+[x] 4.13  Implement Ultimate Spell generation
+[x] 4.14  Balance pass across all cards
+[x] 4.15  Write test_seed_validator.gd
+[x] 4.16  Write test_inscriptions.gd
+[x] 4.17  Write test_progression.gd
+[x] 4.18  Run full regression — 235+ passed, 0 failed
+[x] 4.19  Milestone review: Content Complete / MVP
 ```
 
 ### Phase 5 — Visual & Audio Polish
@@ -791,12 +791,12 @@ Add multiplayer PvP (1v1), matchmaking, leaderboards, seasonal content rotation,
 | Phase | Tasks | Status |
 |:-----:|:-----:|:------:|
 | 1 | 21 | 21/21 COMPLETE |
-| 2 | 24 | 23/24 COMPLETE |
+| 2 | 24 | 24/24 COMPLETE |
 | 3 | 22 | 22/22 COMPLETE |
-| 4 | 19 | 0/19 |
+| 4 | 19 | 19/19 COMPLETE |
 | 5 | 33 | 0/33 |
 | 6 | 21 | 0/21 |
-| **Total** | **140** | **66/140 (47%)** |
+| **Total** | **140** | **86/140 (61%)** |
 
 ---
 

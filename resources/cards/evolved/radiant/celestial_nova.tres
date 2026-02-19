@@ -1,6 +1,23 @@
-[gd_resource type="Resource" script_class="CardResource" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CardResource" load_steps=5 format=3]
 
 [ext_resource type="Script" path="res://scripts/data/card_resource.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/effect_resource.gd" id="2"]
+
+[sub_resource type="Resource" id="effect_1"]
+script = ExtResource("2")
+effect_type = 0
+value = 4
+duration = 0
+target_type = 1
+condition = 0
+
+[sub_resource type="Resource" id="effect_2"]
+script = ExtResource("2")
+effect_type = 1
+value = 4
+duration = 0
+target_type = 2
+condition = 0
 
 [resource]
 script = ExtResource("1")
@@ -16,3 +33,4 @@ target_type = 1
 mastery_xp = 0
 mastery_tier = 4
 is_evolved = true
+effects = [SubResource("effect_1"), SubResource("effect_2")]
