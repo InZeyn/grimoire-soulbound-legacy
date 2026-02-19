@@ -32,7 +32,6 @@ func _ready() -> void:
 
 	retreat_btn.pressed.connect(_on_retreat)
 
-	encounter_manager.encounter_completed.connect(_on_encounter_completed)
 	encounter_manager.chapter_completed.connect(_on_chapter_completed)
 	encounter_manager.chapter_failed.connect(_on_chapter_failed)
 
