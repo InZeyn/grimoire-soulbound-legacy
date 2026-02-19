@@ -17,6 +17,11 @@ export/
 data_*/
 mono_crash.*.json
 
+# Test runner scripts and output
+run_test*.ps1
+test_output.txt
+test_error.txt
+
 # OS generated
 .DS_Store
 Thumbs.db
