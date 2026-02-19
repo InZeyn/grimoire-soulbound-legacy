@@ -10,6 +10,8 @@ extends Control
 @onready var chapter_list: VBoxContainer = %ChapterList
 @onready var new_grimoire_btn: Button = %NewGrimoireBtn
 @onready var seed_input: LineEdit = %SeedInput
+@onready var settings_btn: Button = %SettingsBtn
+@onready var aura_overlay: ColorRect = %AuraOverlay
 
 var grimoire: GrimoireResource = null
 var _chapter_generator: ChapterGenerator = ChapterGenerator.new()
@@ -21,6 +23,10 @@ const CHAPTER_MAP_PATH: String = "res://scenes/campaign/chapter_map.tscn"
 
 func _ready() -> void:
 	new_grimoire_btn.pressed.connect(_on_new_grimoire)
+	settings_btn.pressed.connect(_on_settings_pressed)
+
+	# Start idle aura animation
+	AnimationHelper.aura_breathe(aura_overlay)
 
 	# Try to load existing grimoire
 	grimoire = GameManager.load_grimoire("active")
@@ -130,6 +136,10 @@ func _on_new_grimoire() -> void:
 	if seed_text != "":
 		seed_val = seed_text.hash()
 	_generate_new_grimoire(seed_val)
+
+
+func _on_settings_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/ui/settings_menu.tscn")
 
 
 func _get_xp_for_next_level() -> int:

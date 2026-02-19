@@ -34,8 +34,13 @@ func _ready() -> void:
 
 
 func update_hp(current_hp: int) -> void:
+	var previous_hp: int = int(hp_bar.value)
 	hp_bar.value = current_hp
 	hp_label.text = "%d / %d" % [current_hp, enemy.max_hp]
+	# Flash on damage
+	if current_hp < previous_hp:
+		AnimationHelper.damage_flash(self)
+		AnimationHelper.enemy_hit(self)
 
 
 func update_intent(intent: GlobalEnums.EnemyIntent, value: int = 0) -> void:

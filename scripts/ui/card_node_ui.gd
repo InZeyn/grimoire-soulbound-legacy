@@ -82,9 +82,19 @@ func _on_mouse_entered() -> void:
 		# Hover scale
 		scale = Vector2(1.1, 1.1)
 		z_index = 10
+		# Glow shader on hover
+		_set_glow_intensity(1.2)
 
 
 func _on_mouse_exited() -> void:
 	card_mouse_exited.emit()
 	scale = Vector2.ONE
 	z_index = 0
+	_set_glow_intensity(0.0)
+
+
+func _set_glow_intensity(intensity: float) -> void:
+	var mat: ShaderMaterial = material as ShaderMaterial
+	if mat == null:
+		return
+	mat.set_shader_parameter("glow_intensity", intensity)

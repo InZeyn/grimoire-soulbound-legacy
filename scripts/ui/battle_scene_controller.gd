@@ -197,7 +197,7 @@ func _on_enemy_acted(_enemy_index: int, _intent: GlobalEnums.EnemyIntent, _resul
 
 func _on_enemy_defeated(enemy_index: int) -> void:
 	if enemy_index < _enemy_displays.size():
-		_enemy_displays[enemy_index].modulate = Color(0.3, 0.3, 0.3, 0.5)
+		AnimationHelper.enemy_death(_enemy_displays[enemy_index])
 	_log("%s defeated!" % combat_manager.enemies[enemy_index].enemy_name)
 
 
@@ -216,5 +216,4 @@ func _on_battle_ended(final_state: GlobalEnums.BattleState) -> void:
 
 
 func _on_continue_pressed() -> void:
-	# Return to hub (Phase 3 will wire this properly)
-	get_tree().quit()
+	TransitionManager.transition_to("res://scenes/hub/grimoire_hub.tscn", TransitionManager.TransitionType.FADE)

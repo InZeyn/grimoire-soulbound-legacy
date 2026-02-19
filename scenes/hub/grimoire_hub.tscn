@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=4 format=3]
 
 [ext_resource type="Script" path="res://scripts/ui/grimoire_hub_controller.gd" id="1"]
+[ext_resource type="Shader" path="res://assets/shaders/aura_pulse.gdshader" id="2"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+shader = ExtResource("2")
+shader_parameter/aura_color = Color(0.8, 0.6, 0.2, 0.3)
 
 [node name="GrimoireHub" type="Control"]
 layout_mode = 3
@@ -17,6 +22,15 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color(0.06, 0.04, 0.02, 1.0)
+
+[node name="AuraOverlay" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+material = SubResource("1")
+color = Color(0.8, 0.6, 0.2, 0.08)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -126,3 +140,8 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 8
+
+[node name="SettingsBtn" type="Button" parent="MarginContainer/MainHBox/ChapterPanel/ChapterVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Settings"

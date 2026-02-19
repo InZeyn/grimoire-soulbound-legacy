@@ -14,10 +14,17 @@ config/name="Grimoire: The Soulbound Legacy"
 run/main_scene="res://scenes/hub/grimoire_hub.tscn"
 config/features=PackedStringArray("4.5")
 
+[audio]
+
+buses/default_bus_layout="res://default_bus_layout.tres"
+
 [autoload]
 
 GlobalEnums="*res://autoload/global_enums.gd"
 GameManager="*res://autoload/game_manager.gd"
+AudioManager="*res://autoload/audio_manager.gd"
+QualityManager="*res://autoload/quality_manager.gd"
+TransitionManager="*res://scripts/ui/transition_manager.gd"
 
 [compatibility]
 
