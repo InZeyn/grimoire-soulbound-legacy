@@ -1,0 +1,74 @@
+[gd_resource type="Resource" script_class="ChapterResource" load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/chapter_resource.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/encounter_resource.gd" id="2"]
+[ext_resource type="Resource" path="res://resources/enemies/page_worm.tres" id="3"]
+[ext_resource type="Resource" path="res://resources/enemies/rune_sprite.tres" id="4"]
+[ext_resource type="Resource" path="res://resources/enemies/ember_archivist.tres" id="5"]
+[ext_resource type="Resource" path="res://resources/moral_choices/burning_archive.tres" id="6"]
+
+[sub_resource type="Resource" id="enc1"]
+script = ExtResource("2")
+encounter_id = "ch2_combat_1"
+encounter_name = "Page Worm Nest"
+description = "Venomous page worms writhe through scorched manuscripts."
+node_type = 0
+enemies = [ExtResource("3")]
+grimoire_xp_reward = 6
+
+[sub_resource type="Resource" id="enc2"]
+script = ExtResource("2")
+encounter_id = "ch2_combat_2"
+encounter_name = "Rune Sprite Swarm"
+description = "Luminous sigil fragments orbit a crumbling pillar, charging with energy."
+node_type = 0
+enemies = [ExtResource("4")]
+grimoire_xp_reward = 7
+
+[sub_resource type="Resource" id="enc3"]
+script = ExtResource("2")
+encounter_id = "ch2_rest_1"
+encounter_name = "Firebreak Chamber"
+description = "A stone chamber where the flames cannot reach. Cool air seeps through the cracks."
+node_type = 3
+rest_heal_percent = 0.25
+grimoire_xp_reward = 2
+
+[sub_resource type="Resource" id="enc4"]
+script = ExtResource("2")
+encounter_id = "ch2_moral_1"
+encounter_name = "The Burning Shelf"
+description = "Flames consume ancient knowledge. A choice must be made."
+node_type = 1
+moral_choice = ExtResource("6")
+grimoire_xp_reward = 5
+
+[sub_resource type="Resource" id="enc5"]
+script = ExtResource("2")
+encounter_id = "ch2_combat_3"
+encounter_name = "Infernal Wisps"
+description = "Fire-touched ink wisps, more dangerous than their common kin."
+node_type = 0
+enemies = [ExtResource("3"), ExtResource("4")]
+grimoire_xp_reward = 10
+
+[sub_resource type="Resource" id="enc6"]
+script = ExtResource("2")
+encounter_id = "ch2_boss"
+encounter_name = "The Ember Archivist"
+description = "A scholar consumed by forbidden flame. Knowledge burns in its wake."
+node_type = 4
+enemies = [ExtResource("5")]
+grimoire_xp_reward = 18
+
+[resource]
+script = ExtResource("1")
+chapter_id = "ch2_burning_archive"
+chapter_name = "The Burning Archive"
+description = "Fire has breached the sealed vaults. Ancient texts char and curl as dark magic feeds the blaze."
+theme = 1
+chapter_number = 2
+encounters = [SubResource("enc1"), SubResource("enc2"), SubResource("enc3"), SubResource("enc4"), SubResource("enc5"), SubResource("enc6")]
+difficulty_level = 2
+completion_xp_bonus = 30
+chapter_alignment = 1

@@ -1,0 +1,75 @@
+[gd_resource type="Resource" script_class="ChapterResource" load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/chapter_resource.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/encounter_resource.gd" id="2"]
+[ext_resource type="Resource" path="res://resources/enemies/ink_wisp.tres" id="3"]
+[ext_resource type="Resource" path="res://resources/enemies/dust_golem.tres" id="4"]
+[ext_resource type="Resource" path="res://resources/enemies/silent_librarian.tres" id="5"]
+[ext_resource type="Resource" path="res://resources/moral_choices/wounded_scribe.tres" id="6"]
+
+[sub_resource type="Resource" id="enc1"]
+script = ExtResource("2")
+encounter_id = "ch1_combat_1"
+encounter_name = "Ink Wisps in the Stacks"
+description = "Flickering ink wisps swarm between the dusty shelves."
+node_type = 0
+enemies = [ExtResource("3")]
+grimoire_xp_reward = 5
+
+[sub_resource type="Resource" id="enc2"]
+script = ExtResource("2")
+encounter_id = "ch1_moral_1"
+encounter_name = "The Wounded Scribe"
+description = "A scribe lies fallen between the shelves."
+node_type = 1
+moral_choice = ExtResource("6")
+grimoire_xp_reward = 5
+
+[sub_resource type="Resource" id="enc3"]
+script = ExtResource("2")
+encounter_id = "ch1_combat_2"
+encounter_name = "Dust Golem Ambush"
+description = "A massive construct of compressed library dust blocks the corridor."
+node_type = 0
+enemies = [ExtResource("4")]
+grimoire_xp_reward = 8
+
+[sub_resource type="Resource" id="enc4"]
+script = ExtResource("2")
+encounter_id = "ch1_treasure_1"
+encounter_name = "Hidden Alcove"
+description = "Behind a false bookshelf, you find loose pages glowing with residual magic."
+node_type = 2
+treasure_choices = 3
+ink_reward = 10
+grimoire_xp_reward = 3
+
+[sub_resource type="Resource" id="enc5"]
+script = ExtResource("2")
+encounter_id = "ch1_rest_1"
+encounter_name = "Reading Nook"
+description = "A quiet corner with a still-burning candle. The air is warm and safe."
+node_type = 3
+rest_heal_percent = 0.3
+grimoire_xp_reward = 2
+
+[sub_resource type="Resource" id="enc6"]
+script = ExtResource("2")
+encounter_id = "ch1_boss"
+encounter_name = "The Silent Librarian"
+description = "The keeper of the Forgotten Library emerges from the shadows, demanding silence — permanently."
+node_type = 4
+enemies = [ExtResource("5")]
+grimoire_xp_reward = 15
+
+[resource]
+script = ExtResource("1")
+chapter_id = "ch1_forgotten_library"
+chapter_name = "The Forgotten Library"
+description = "Dust-choked shelves stretch endlessly in this sealed wing of the archives. Something stirs between the pages."
+theme = 0
+chapter_number = 1
+encounters = [SubResource("enc1"), SubResource("enc2"), SubResource("enc3"), SubResource("enc4"), SubResource("enc5"), SubResource("enc6")]
+difficulty_level = 1
+completion_xp_bonus = 25
+chapter_alignment = 0

@@ -1,0 +1,85 @@
+[gd_resource type="Resource" script_class="ChapterResource" load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/chapter_resource.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/encounter_resource.gd" id="2"]
+[ext_resource type="Resource" path="res://resources/enemies/ink_wisp.tres" id="3"]
+[ext_resource type="Resource" path="res://resources/enemies/dust_golem.tres" id="4"]
+[ext_resource type="Resource" path="res://resources/enemies/page_worm.tres" id="5"]
+[ext_resource type="Resource" path="res://resources/enemies/root_warden.tres" id="6"]
+[ext_resource type="Resource" path="res://resources/moral_choices/overgrown_spirit.tres" id="7"]
+
+[sub_resource type="Resource" id="enc1"]
+script = ExtResource("2")
+encounter_id = "ch3_combat_1"
+encounter_name = "Vine-Wrapped Wisps"
+description = "Ink wisps tangled in living vines, their movements erratic and unpredictable."
+node_type = 0
+enemies = [ExtResource("3"), ExtResource("3")]
+grimoire_xp_reward = 7
+
+[sub_resource type="Resource" id="enc2"]
+script = ExtResource("2")
+encounter_id = "ch3_treasure_1"
+encounter_name = "Mossy Vault"
+description = "Beneath the moss, an ancient vault holds pages preserved by nature's magic."
+node_type = 2
+treasure_choices = 3
+ink_reward = 15
+grimoire_xp_reward = 3
+
+[sub_resource type="Resource" id="enc3"]
+script = ExtResource("2")
+encounter_id = "ch3_combat_2"
+encounter_name = "Overgrown Golem"
+description = "A dust golem colonized by creeping roots. Stronger and more resilient than its library kin."
+node_type = 0
+enemies = [ExtResource("4")]
+grimoire_xp_reward = 8
+
+[sub_resource type="Resource" id="enc4"]
+script = ExtResource("2")
+encounter_id = "ch3_moral_1"
+encounter_name = "The Verdant Spirit"
+description = "A nature spirit offers a choice about the roots consuming this place."
+node_type = 1
+moral_choice = ExtResource("7")
+grimoire_xp_reward = 5
+
+[sub_resource type="Resource" id="enc5"]
+script = ExtResource("2")
+encounter_id = "ch3_rest_1"
+encounter_name = "Druid's Hollow"
+description = "A clearing where bioluminescent fungi provide gentle light. The air smells of rain and old paper."
+node_type = 3
+rest_heal_percent = 0.35
+grimoire_xp_reward = 2
+
+[sub_resource type="Resource" id="enc6"]
+script = ExtResource("2")
+encounter_id = "ch3_combat_3"
+encounter_name = "Root Crawlers"
+description = "Page worms and vine tendrils converge in a living barricade."
+node_type = 0
+enemies = [ExtResource("5"), ExtResource("5")]
+grimoire_xp_reward = 9
+
+[sub_resource type="Resource" id="enc7"]
+script = ExtResource("2")
+encounter_id = "ch3_boss"
+encounter_name = "The Root Warden"
+description = "The scriptorium's primal guardian awakens. Roots erupt from the floor as nature defends its claim."
+node_type = 4
+enemies = [ExtResource("6")]
+grimoire_xp_reward = 20
+
+[resource]
+script = ExtResource("1")
+chapter_id = "ch3_overgrown_scriptorium"
+chapter_name = "The Overgrown Scriptorium"
+description = "Nature has reclaimed this wing of the archives. Roots split stone and moss covers every surface. Something ancient watches from the green."
+theme = 2
+chapter_number = 3
+encounters = [SubResource("enc1"), SubResource("enc2"), SubResource("enc3"), SubResource("enc4"), SubResource("enc5"), SubResource("enc6"), SubResource("enc7")]
+difficulty_level = 3
+completion_xp_bonus = 40
+chapter_alignment = 2

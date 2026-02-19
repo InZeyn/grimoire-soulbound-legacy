@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/enemy_resource.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+enemy_id = "ink_wisp"
+enemy_name = "Ink Wisp"
+max_hp = 12
+alignment = 2
+description = "A flickering blob of sentient ink. Attacks relentlessly but shatters easily."
+attack_damage = 4
+block_value = 0
+buff_value = 0
+intent_weights = PackedInt32Array(80, 5, 5, 5, 5)
+enrage_after_turns = 0
+enrage_damage_multiplier = 1.0

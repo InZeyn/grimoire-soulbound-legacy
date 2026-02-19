@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/card_resource.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+card_id = "prayer_of_light"
+card_name = "Prayer of Light"
+description = "Heal 2 HP."
+card_type = 2
+alignment = 0
+rarity = 0
+mana_cost = 0
+base_value = 2
+target_type = 2
+mastery_xp = 0
+mastery_tier = 0
+is_evolved = false

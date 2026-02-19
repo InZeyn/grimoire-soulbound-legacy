@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InscriptionResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/inscription_resource.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+inscription_id = "radiant_quill"
+inscription_name = "Radiant Quill"
+description = "Gain +1 block from Defense cards."
+alignment = 0
+effect_key = "block_bonus"
+effect_value = 1

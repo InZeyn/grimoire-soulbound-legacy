@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/card_resource.gd" id="1"]
+[ext_resource type="Resource" path="res://resources/cards/evolved/radiant/divine_shield.tres" id="2"]
+[ext_resource type="Resource" path="res://resources/cards/evolved/vile/corrupted_barrier.tres" id="3"]
+[ext_resource type="Resource" path="res://resources/cards/evolved/primal/living_shield.tres" id="4"]
+
+[resource]
+script = ExtResource("1")
+card_id = "holy_shield"
+card_name = "Holy Shield"
+description = "Gain 7 block."
+card_type = 1
+alignment = 0
+rarity = 0
+mana_cost = 2
+base_value = 7
+target_type = 2
+mastery_xp = 0
+mastery_tier = 0
+is_evolved = false
+evolution_radiant = ExtResource("2")
+evolution_vile = ExtResource("3")
+evolution_primal = ExtResource("4")

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="MoralChoiceResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/moral_choice_resource.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+choice_id = "burning_archive"
+title = "The Burning Shelf"
+narrative_text = "Flames lick at a shelf of ancient tomes. Among them, you spot a sealed grimoire pulsing with dark energy. A guardian construct blocks the fire exit — behind it, three trapped scholars call for help."
+option_a_text = "Douse the flames and save the scholars."
+option_a_alignment = 0
+option_a_shift = 4
+option_a_result_text = "You channel your mana into water sigils, quenching the blaze. The scholars bow in thanks. Your Grimoire's pages brighten, gold leaf spreading along the spine."
+option_b_text = "Seize the sealed grimoire while the fire distracts everyone."
+option_b_alignment = 1
+option_b_shift = 4
+option_b_result_text = "The dark grimoire pulses in your hands. You feel its power seep into your own book — thorny vines of ink creep across your pages. The scholars' cries fade behind you."
+option_c_text = "Redirect the fire to destroy the construct, then evacuate everyone."
+option_c_alignment = 2
+option_c_shift = 4
+option_c_result_text = "Fire becomes your tool. The construct melts as the scholars scramble free. Your Grimoire hums with primal energy — chaos harnessed, not feared."

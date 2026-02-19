@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/card_resource.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+card_id = "iron_bark_radiant"
+card_name = "Hallowed Aegis"
+description = "Gain 12 block. Heal 2 HP."
+card_type = 1
+alignment = 0
+rarity = 2
+mana_cost = 2
+base_value = 12
+target_type = 2
+mastery_xp = 0
+mastery_tier = 4
+is_evolved = true

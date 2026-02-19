@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/card_resource.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+card_id = "wild_growth_primal"
+card_name = "Overgrowth"
+description = "Gain 4 block. Gain 1 strength. Draw 1 card."
+card_type = 2
+alignment = 2
+rarity = 2
+mana_cost = 2
+base_value = 4
+target_type = 2
+mastery_xp = 0
+mastery_tier = 4
+is_evolved = true

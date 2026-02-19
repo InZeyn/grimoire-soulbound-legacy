@@ -1,0 +1,186 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/battle_scene_controller.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/ui/card_hand_ui.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/ui/battle_hud.gd" id="3"]
+
+[node name="BattleScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.08, 0.06, 0.04, 1.0)
+
+[node name="MainVBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
+
+[node name="EnemyArea" type="PanelContainer" parent="MainVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.35
+
+[node name="EnemyContainer" type="HBoxContainer" parent="MainVBox/EnemyArea"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 24
+
+[node name="BattleLogPanel" type="PanelContainer" parent="MainVBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 40)
+
+[node name="BattleLogLabel" type="Label" parent="MainVBox/BattleLogPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Battle begins..."
+horizontal_alignment = 1
+
+[node name="HandArea" type="PanelContainer" parent="MainVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.35
+
+[node name="CardHand" type="HBoxContainer" parent="MainVBox/HandArea"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 8
+script = ExtResource("2")
+
+[node name="HUDArea" type="PanelContainer" parent="MainVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="BattleHUD" type="PanelContainer" parent="MainVBox/HUDArea"]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("3")
+
+[node name="HUDLayout" type="HBoxContainer" parent="MainVBox/HUDArea/BattleHUD"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="HPSection" type="VBoxContainer" parent="MainVBox/HUDArea/BattleHUD/HUDLayout"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PlayerHPBar" type="ProgressBar" parent="MainVBox/HUDArea/BattleHUD/HUDLayout/HPSection"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 20)
+max_value = 50.0
+value = 50.0
+
+[node name="PlayerHPLabel" type="Label" parent="MainVBox/HUDArea/BattleHUD/HUDLayout/HPSection"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "50 / 50"
+
+[node name="PlayerStatusLabel" type="Label" parent="MainVBox/HUDArea/BattleHUD/HUDLayout/HPSection"]
+unique_name_in_owner = true
+layout_mode = 2
+text = ""
+visible = false
+
+[node name="ManaSection" type="VBoxContainer" parent="MainVBox/HUDArea/BattleHUD/HUDLayout"]
+layout_mode = 2
+
+[node name="ManaLabel" type="Label" parent="MainVBox/HUDArea/BattleHUD/HUDLayout/ManaSection"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Mana: 3 / 3"
+
+[node name="PlayerBlockLabel" type="Label" parent="MainVBox/HUDArea/BattleHUD/HUDLayout/ManaSection"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Block: 0"
+visible = false
+
+[node name="TurnLabel" type="Label" parent="MainVBox/HUDArea/BattleHUD/HUDLayout/ManaSection"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Turn 1"
+
+[node name="PileSection" type="VBoxContainer" parent="MainVBox/HUDArea/BattleHUD/HUDLayout"]
+layout_mode = 2
+
+[node name="DrawPileLabel" type="Label" parent="MainVBox/HUDArea/BattleHUD/HUDLayout/PileSection"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Draw: 15"
+
+[node name="DiscardPileLabel" type="Label" parent="MainVBox/HUDArea/BattleHUD/HUDLayout/PileSection"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Discard: 0"
+
+[node name="AttuneSection" type="HBoxContainer" parent="MainVBox/HUDArea/BattleHUD/HUDLayout"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="AttuneRadiantBtn" type="Button" parent="MainVBox/HUDArea/BattleHUD/HUDLayout/AttuneSection"]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+text = "Radiant"
+
+[node name="AttuneVileBtn" type="Button" parent="MainVBox/HUDArea/BattleHUD/HUDLayout/AttuneSection"]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+text = "Vile"
+
+[node name="AttunePrimalBtn" type="Button" parent="MainVBox/HUDArea/BattleHUD/HUDLayout/AttuneSection"]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+text = "Primal"
+
+[node name="EndTurnBtn" type="Button" parent="MainVBox/HUDArea/BattleHUD/HUDLayout"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "End Turn"
+
+[node name="ResultsPanel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -100.0
+offset_right = 150.0
+offset_bottom = 100.0
+visible = false
+
+[node name="ResultsVBox" type="VBoxContainer" parent="ResultsPanel"]
+layout_mode = 2
+
+[node name="ResultsLabel" type="Label" parent="ResultsPanel/ResultsVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+text = "VICTORY!"
+
+[node name="ContinueBtn" type="Button" parent="ResultsPanel/ResultsVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Continue"

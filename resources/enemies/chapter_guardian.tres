@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/enemy_resource.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+enemy_id = "chapter_guardian"
+enemy_name = "Chapter Guardian"
+max_hp = 55
+alignment = 2
+description = "The sentient protector of a sealed chapter. Adapts its strategy as the battle progresses."
+attack_damage = 7
+block_value = 6
+buff_value = 2
+intent_weights = PackedInt32Array(35, 25, 15, 10, 15)
+enrage_after_turns = 10
+enrage_damage_multiplier = 1.75

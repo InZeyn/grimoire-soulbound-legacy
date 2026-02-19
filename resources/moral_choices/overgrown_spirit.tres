@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="MoralChoiceResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/moral_choice_resource.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+choice_id = "overgrown_spirit"
+title = "The Verdant Spirit"
+narrative_text = "Deep in the overgrown scriptorium, a nature spirit materializes from the moss-covered walls. It offers you a choice: the roots that have invaded this place can be purified, corrupted, or integrated."
+option_a_text = "Purify the roots, restoring the scriptorium to its original state."
+option_a_alignment = 0
+option_a_shift = 5
+option_a_result_text = "The roots recede as radiant light floods the chamber. Ancient texts are revealed beneath the growth. Your Grimoire's sigils glow with restored clarity."
+option_b_text = "Corrupt the roots, turning them into weapons under your control."
+option_b_alignment = 1
+option_b_shift = 5
+option_b_result_text = "The roots twist and darken, thorns sprouting along their length. They bend to your will. Your Grimoire's binding tightens as dark veins spread across its cover."
+option_c_text = "Integrate with the roots, letting nature and knowledge become one."
+option_c_alignment = 2
+option_c_shift = 5
+option_c_result_text = "You press your Grimoire against the living wall. Pages and leaves intertwine. The spirit nods — you have chosen balance. Green light pulses through your book's spine."

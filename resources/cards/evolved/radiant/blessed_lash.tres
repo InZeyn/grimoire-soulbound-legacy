@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/card_resource.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+card_id = "vine_lash_radiant"
+card_name = "Blessed Lash"
+description = "Deal 4 damage twice. Heal 2 HP per hit."
+card_type = 0
+alignment = 0
+rarity = 2
+mana_cost = 2
+base_value = 4
+target_type = 0
+mastery_xp = 0
+mastery_tier = 4
+is_evolved = true

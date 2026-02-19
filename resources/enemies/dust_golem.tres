@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/enemy_resource.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+enemy_id = "dust_golem"
+enemy_name = "Dust Golem"
+max_hp = 35
+alignment = 2
+description = "A hulking construct of compressed library dust. Slow but incredibly tough."
+attack_damage = 6
+block_value = 8
+buff_value = 1
+intent_weights = PackedInt32Array(30, 45, 15, 5, 5)
+enrage_after_turns = 8
+enrage_damage_multiplier = 1.5

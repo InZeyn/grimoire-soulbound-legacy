@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="MoralChoiceResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/moral_choice_resource.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+choice_id = "wounded_scribe"
+title = "The Wounded Scribe"
+narrative_text = "You find a scribe collapsed between the shelves, ink bleeding from his quill like a wound. His grimoire lies open beside him, its pages flickering with fading light. He reaches toward you with trembling hands."
+option_a_text = "Heal his wounds and help him to safety."
+option_a_alignment = 0
+option_a_shift = 3
+option_a_result_text = "The scribe's eyes fill with gratitude. As you mend his wounds, you feel warmth spread through your own Grimoire. The pages glow softly."
+option_b_text = "Take his grimoire. He won't need it where he's going."
+option_b_alignment = 1
+option_b_shift = 3
+option_b_result_text = "The scribe's eyes widen in horror as you pry the book from his failing grip. Your Grimoire shudders, its edges darkening with fresh ink."
+option_c_text = "Share your mana to stabilize him, then absorb his lingering knowledge."
+option_c_alignment = 2
+option_c_shift = 3
+option_c_result_text = "A fair exchange. The scribe nods weakly as the knowledge transfers. Your Grimoire's pages rustle with new understanding."

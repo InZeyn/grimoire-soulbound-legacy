@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/enemy_resource.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+enemy_id = "silent_librarian"
+enemy_name = "The Silent Librarian"
+max_hp = 45
+alignment = 0
+description = "Keeper of the Forgotten Library. Radiates oppressive order — silence is not peace, it is control."
+attack_damage = 6
+block_value = 8
+buff_value = 2
+intent_weights = PackedInt32Array(30, 30, 20, 10, 10)
+enrage_after_turns = 8
+enrage_damage_multiplier = 1.75

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/card_resource.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+card_id = "ember_lance_primal"
+card_name = "Storm Lance"
+description = "Deal 4 damage to all enemies. Draw 1 card."
+card_type = 0
+alignment = 2
+rarity = 2
+mana_cost = 3
+base_value = 4
+target_type = 1
+mastery_xp = 0
+mastery_tier = 4
+is_evolved = true

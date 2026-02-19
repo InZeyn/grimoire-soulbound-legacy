@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/enemy_resource.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+enemy_id = "root_warden"
+enemy_name = "The Root Warden"
+max_hp = 60
+alignment = 2
+description = "The scriptorium's primal guardian. Roots and vines form an ever-shifting armor around a core of ancient wood."
+attack_damage = 5
+block_value = 10
+buff_value = 2
+intent_weights = PackedInt32Array(25, 35, 20, 10, 10)
+enrage_after_turns = 10
+enrage_damage_multiplier = 1.5

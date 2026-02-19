@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/enemy_resource.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+enemy_id = "page_worm"
+enemy_name = "Page Worm"
+max_hp = 18
+alignment = 1
+description = "A parasite that burrows through pages, leaving venomous trails."
+attack_damage = 3
+block_value = 2
+buff_value = 2
+intent_weights = PackedInt32Array(35, 15, 10, 30, 10)
+enrage_after_turns = 0
+enrage_damage_multiplier = 1.0

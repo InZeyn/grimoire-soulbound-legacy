@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/card_resource.gd" id="1"]
+[ext_resource type="Resource" path="res://resources/cards/evolved/radiant/radiant_mend.tres" id="2"]
+[ext_resource type="Resource" path="res://resources/cards/evolved/vile/dark_mend.tres" id="3"]
+[ext_resource type="Resource" path="res://resources/cards/evolved/primal/nature_mend.tres" id="4"]
+
+[resource]
+script = ExtResource("1")
+card_id = "mending_light"
+card_name = "Mending Light"
+description = "Restore 4 HP to self."
+card_type = 2
+alignment = 0
+rarity = 0
+mana_cost = 1
+base_value = 4
+target_type = 2
+mastery_xp = 0
+mastery_tier = 0
+is_evolved = false
+evolution_radiant = ExtResource("2")
+evolution_vile = ExtResource("3")
+evolution_primal = ExtResource("4")
